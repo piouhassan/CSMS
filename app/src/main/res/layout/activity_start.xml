@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.StartActivity"
+    android:background="@drawable/bg"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntufont"
+        android:textSize="50dp"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginTop="30dp"
+        android:id="@+id/welcome"
+        />
+    <View
+        android:layout_width="150dp"
+        android:layout_height="4dp"
+         android:layout_marginLeft="@dimen/space20"
+        android:layout_marginTop="@dimen/space10"
+        android:id="@+id/view"
+        android:layout_below="@id/welcome"
+        android:background="@color/white"
+        />
+    <TextView
+        android:layout_below="@id/view"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Une application simple et organisé pour vous faire gagner du temps et maximiser les envois. Vous creer vos groupe de contact aussi facilement que vous envoyer un message groupé."
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntufont"
+        android:textSize="14.4dp"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginTop="30dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="SE CONNECTER"
+        android:padding="@dimen/space10"
+        android:textColor="@color/colorPrimary"
+        android:layout_above="@id/register"
+        android:textStyle="bold"
+        android:id="@+id/login"
+        />
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonstyle"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+         android:layout_marginBottom="30dp"
+        android:text="S'INSCRIRE"
+        android:padding="@dimen/space10"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/colorPrimary"></View>
+    <EditText
+        android:id="@+id/edt_grpe"
+        android:layout_width="match_parent"
+        android:hint="Nom du groupe"
+        android:padding="@dimen/space10"
+        android:fontFamily="@font/ubuntufont"
+        android:textSize="12.5dp"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_marginLeft="@dimen/space10"
+        android:layout_marginRight="@dimen/space10"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_ccv"
+        android:layout_height="50dp" />
+
+
+     <Button
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginLeft="50dp"
+         android:layout_marginRight="50dp"
+         android:layout_marginBottom="30dp"
+         android:background="@color/colorPrimary"
+         android:text="Ajouter"
+         android:id="@+id/addgrptoserver"
+         android:textColor="@color/white"
+         />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Creation en cours"
+          android:layout_gravity="center"
+          android:layout_marginTop="50dp"
+          android:visibility="gone"
+          android:id="@+id/loadingtext"
+          />
+    <ProgressBar
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:progressTint="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        android:layout_marginBottom="50dp"
+        />
+
+</LinearLayout>

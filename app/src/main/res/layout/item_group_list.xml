@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="@color/white"
+    android:id="@+id/gritem"
+    android:layout_marginLeft="@dimen/space5"
+    android:layout_marginRight="@dimen/space5"
+    android:layout_marginTop="@dimen/space10"
+    android:elevation="3dp"
+    android:clickable="true"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/icongrp"
+        android:src="@drawable/group_person"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icongrp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space10"
+        android:id="@+id/gname"
+        android:text="@string/app_name"
+        android:fontFamily="@font/ubuntufont"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space10"
+        android:id="@+id/countperson"
+        android:text="10"
+        android:textColor="@color/black"
+        android:layout_marginBottom="@dimen/space20"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.WalletsActivity"
+    android:orientation="vertical"
+    android:background="#FAF6F6"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/top1"
+        android:elevation="3dp"
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_marginTop="@dimen/space20"
+            android:src="@drawable/gsm"
+            android:tint="@color/white"
+            />
+        <TextView
+            android:id="@+id/reseau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space20"
+            android:text="T-MONEY &amp; FLOOZ"
+            android:textColor="@color/white"
+            android:fontFamily="@font/opensans_bold"
+            android:textStyle="bold"
+            android:textSize="@dimen/space20"
+            />
+        <TextView
+            android:id="@+id/editnumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/reseau"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+           android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:text="Recharges"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntufont"
+            android:textSize="35dp"
+            />
+
+        <TextView
+            android:layout_below="@id/editnumber"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+              android:text="Solde restant"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntufont"
+             android:textSize="12.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/montantrestant"
+            />
+
+        <TextView
+            android:layout_below="@id/montantrestant"
+            android:id="@+id/solderestant"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:text="1200"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntufont"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_below="@id/editnumber"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:text="SMS restant"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntufont"
+            android:textSize="12.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_below="@id/montantrestant"
+            android:layout_alignParentRight="true"
+            android:id="@+id/messagerestant"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="10dp"
+            android:text="100"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntufont"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginBottom="@dimen/space20"
+        android:layout_marginRight="10dp"
+          android:layout_marginTop="@dimen/space20"
+        android:background="@drawable/round_border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            >
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="@dimen/space20"
+                   android:text="Operation"
+                   android:fontFamily="@font/ubuntufont"
+                    android:textColor="@color/grey_90"
+                   />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/round_border"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:background="@drawable/round_border">
+
+                <EditText
+                    android:id="@+id/wallet_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="Montant"
+                    android:inputType="number"
+                    android:padding="15dp"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Suivant"
+                android:textAllCaps="false"
+                android:layout_marginTop="30dp"
+                android:textColor="#ffffff"
+                android:padding="15dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/wallet_next"
+                android:background="@drawable/rounded_button"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

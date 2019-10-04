@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "209509979052",
+    "firebase_url": "https://c-sms-d1ad5.firebaseio.com",
+    "project_id": "c-sms-d1ad5",
+    "storage_bucket": "c-sms-d1ad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209509979052:android:268b8b5197405038042009",
+        "android_client_info": {
+          "package_name": "com.togo.c_sms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209509979052-27360iespsbc53ofn543ejmq643neph0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.togo.c_sms",
+            "certificate_hash": "c9365bce457b37622f32111215d2c1f67b712caa"
+          }
+        },
+        {
+          "client_id": "209509979052-0hr2823ff70851hqkh9eao43os4ubn38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9bdYsX_c418-T5EtdLN3Ooewuuz2pr_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209509979052-0hr2823ff70851hqkh9eao43os4ubn38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

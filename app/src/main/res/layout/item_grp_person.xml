@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_below="@id/grpct"
+android:layout_width="match_parent"
+android:layout_height="80dp"
+    android:layout_marginTop="1dp"
+    android:id="@+id/grpsinglecontact"
+android:background="@color/white"
+android:orientation="horizontal">
+
+<LinearLayout
+    android:layout_width="80dp"
+    android:layout_height="80dp">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="@dimen/space10"
+         android:layout_gravity="center"
+        android:src="@drawable/person" />
+</LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/space20"
+        android:fontFamily="@font/ubuntufont"
+        android:text="Laurent"
+        android:textColor="@color/black"
+        android:id="@+id/contactsinglename"
+        android:textSize="13.5dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/ubuntufont"
+        android:text="92363533"
+        android:textColor="@color/black"
+        android:id="@+id/contactsinglenumero"
+        android:textSize="13.5dp" />
+
+    <ImageView
+        android:id="@+id/delcontact"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/space10"
+        android:layout_marginRight="@dimen/space20"
+        android:clickable="true"
+        android:tint="#D61A2A"
+        android:padding="7dp"
+        android:src="@drawable/trash"
+        />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/grey_5"
+    android:layout_alignParentBottom="true"
+    />
+</RelativeLayout>
+
+</LinearLayout>

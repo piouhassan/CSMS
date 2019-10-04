@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MessageWriteActivity"
+    android:background="@drawable/writebg"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:id="@+id/top1"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/close2"
+                android:layout_alignParentRight="true"
+               android:layout_marginRight="@dimen/space20"
+                android:id="@+id/closemessagebox"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nouveau message"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/ubuntufont"
+                android:id="@+id/grpct"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/message_editzone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            >
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space20"
+                android:layout_marginBottom="@dimen/space20"
+                android:background="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/message_show_zone"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/space20"
+                        >
+                        <TextView
+                            android:textIsSelectable="true"
+                            android:id="@+id/message_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros."
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="@dimen/space10"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/count_caracter"
+                                android:text="1"
+                                android:textSize="@dimen/space10"
+                                android:fontFamily="@font/ubuntufont"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/"
+                                android:textSize="@dimen/space10"
+                                android:layout_gravity="right"
+                                android:fontFamily="@font/ubuntufont"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="160"
+                                android:id="@+id/perpagecaracter"
+                                android:textSize="@dimen/space10"
+                                android:layout_gravity="right"
+                                android:fontFamily="@font/ubuntufont"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimary"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp"
+        android:background="#eee"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/message_editzone"
+        >
+
+        <!-- INPUT -->
+        <EditText
+            android:id="@+id/message_write_edittext"
+            android:layout_toLeftOf="@+id/sendmessage"
+            android:hint="Entrez le message texte"
+            android:textSize="12sp"
+            android:paddingLeft="17dp"
+            android:layout_marginLeft="@dimen/space10"
+            android:paddingTop="15dp"
+            android:fontFamily="@font/ubuntufont"
+            android:maxLines="1"
+            android:inputType="textMultiLine"
+            android:paddingBottom="15dp"
+            android:autoLink="all"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:background="@drawable/bg_ccv"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            />
+
+        <!-- ICON -->
+        <ImageView
+            android:id="@+id/sendmessage"
+            android:src="@drawable/send"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space10"
+            android:layout_marginLeft="17dp"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/space10"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/round_red"
+            android:tint="@color/white"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
