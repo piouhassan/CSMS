@@ -4,7 +4,7 @@ public class ApiUrl {
 
 
 
-    private static String URL = "http://192.168.8.100:7000/api/";
+    private static String URL = "http://192.168.1.154:7000/api/";
 
 
 

@@ -3,6 +3,8 @@ package com.togo.c_sms.Activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -20,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -34,6 +37,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.togo.c_sms.Adapters.ContactAdapter;
 import com.togo.c_sms.Database.UserDbHelper;
 import com.togo.c_sms.Helper.ApiUrl;
 import com.togo.c_sms.Models.Contact;
@@ -51,13 +55,13 @@ public class ChooseReceiverActivity extends AppCompatActivity {
 
     private  static final String TAG = "ContactArray";
    String  message, letter;
-   TextView submit_header,entete,letterscount,topay;
+   TextView entete,letterscount,topay;
    LinearLayout choose_receiver;
    RadioButton tocontact, togroup;
     Spinner spinner;
     private UserDbHelper db;
     LinearLayout choose_receiver_group;
-
+     int topayed;
     private ArrayList<Group> groupArrayList;
     private ArrayList<String> names = new ArrayList<String>();
     JsonArrayRequest request;
@@ -68,8 +72,9 @@ public class ChooseReceiverActivity extends AppCompatActivity {
     RelativeLayout choosedestinataire;
     LinearLayout contactChoose;
     ArrayList<Contact> contactArrayList;
-
-
+    RecyclerView.LayoutManager  choosecontactrecyclerviewLayout;
+    RecyclerView.Adapter mAdapter;
+    ImageView submit_header;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +96,7 @@ public class ChooseReceiverActivity extends AppCompatActivity {
          }else{
              finalamount = amount;
          }
-         int topayed = finalamount * 12;
+          topayed = finalamount * 12;
 
         topay.setText(new StringBuilder(String.valueOf(topayed)).append(" frcs"));
 
@@ -133,7 +138,7 @@ public class ChooseReceiverActivity extends AppCompatActivity {
                     RelativeLayout Header = findViewById(R.id.Header);
                     choosedestinataire.setVisibility(View.VISIBLE);
                     choose_receiver.setVisibility(View.VISIBLE);
-                    Header.setVisibility(View.GONE);
+                     Header.setVisibility(View.GONE);
 //                    header_content.setFocusable(false);
 //                    header_content.setEnabled(false);
                 }
@@ -184,6 +189,7 @@ public class ChooseReceiverActivity extends AppCompatActivity {
                     Intent intent = new Intent(ChooseReceiverActivity.this, RecapBeforeSendActivity.class);
                     intent.putExtra("header", header);
                     intent.putExtra("letter", letter);
+                    intent.putExtra("topay", String.valueOf(topay));
                     startActivity(intent);
                 }
             }
@@ -241,6 +247,24 @@ public class ChooseReceiverActivity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+    private void addtorecyclerview(String phoneNo, String name) {
+        contactChoose.setVisibility(View.VISIBLE);
+
+        RecyclerView choosecontactrecyclerview = findViewById(R.id.choosecontactrecyclerview);
+        Contact contact = new Contact();
+        contact.setNumero(phoneNo);
+        contact.setName(name);
+        contactArrayList.add(contact);
+        for (int i = 0; i < contactArrayList.size();i++){
+            choosecontactrecyclerview.setHasFixedSize(true);
+            choosecontactrecyclerviewLayout = new LinearLayoutManager(this);
+            mAdapter = new ContactAdapter(contactArrayList);
+            choosecontactrecyclerview.setLayoutManager(choosecontactrecyclerviewLayout);
+            choosecontactrecyclerview.setAdapter(mAdapter);
+        }
+
+        topay.setText(new StringBuilder(String.valueOf(contactArrayList.size() * topayed)).append(" frcs"));
+    }
 
     @Override
     public void onBackPressed() {
@@ -308,18 +332,5 @@ public class ChooseReceiverActivity extends AppCompatActivity {
         }
     }
 
-    private void addtorecyclerview(String phoneNo, String name) {
-        contactChoose.setVisibility(View.VISIBLE);
-        Contact contact = new Contact();
-        contact.setNumero(phoneNo);
-        contact.setName(name);
-        contactArrayList.add(contact);
-          for (int i = 0; i < contactArrayList.size(); i++){
-              Log.d(TAG, "Oncreate :"+ contactArrayList.get(i).getNumero());
-          }
-    }
 
-    private void writenewcontact() {
-
-    }
 }

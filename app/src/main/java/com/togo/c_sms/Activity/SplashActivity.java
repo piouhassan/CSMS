@@ -21,9 +21,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Animation rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
 
-        ((ImageView)findViewById(R.id.logo)).startAnimation(rotate);
+        ((ImageView)findViewById(R.id.logo)).startAnimation(pulse);
 
 
         final Intent i = new Intent(this, StartActivity.class);

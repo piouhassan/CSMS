@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/space10"
+    android:layout_marginRight="@dimen/space10"
+    android:layout_marginBottom="0.7dp"
+    android:layout_height="50dp">
+    <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_below="@id/choose_receiver"
+    android:layout_alignParentBottom="true"
+    >
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+    android:layout_width="50dp"
+    android:layout_height="match_parent"
+    android:src="@drawable/person" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="60dp"
+    android:fontFamily="@font/ubuntufont"
+        android:id="@+id/choosecontact_name"
+    android:text="Contact" />
+
+    <ImageView
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_gravity="right"
+        android:id="@+id/removefromsender"
+    android:layout_marginRight="@dimen/space10"
+    android:layout_marginTop="@dimen/space10"
+    android:padding="@dimen/space5"
+    android:src="@drawable/close2" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

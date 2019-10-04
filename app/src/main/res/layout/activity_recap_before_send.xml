@@ -6,33 +6,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.RecapBeforeSendActivity"
-    android:background="@color/white"
+    android:background="#EBEAEB"
     >
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_centerHorizontal="true"
-           android:layout_marginTop="@dimen/space20"
-            android:fontFamily="@font/ubuntufont"
-           android:text="Recapitulatif"
-           android:textSize="@dimen/space20"
-           android:id="@+id/recaptitle"
-           />
-    <View
-        android:layout_width="250dp"
-        android:layout_height="1dp"
-        android:background="@color/grey_90"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/recaptitle"
-        android:layout_marginTop="@dimen/space10"
-        android:id="@+id/view1"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:id="@+id/top"
+        >
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="12 Fcs"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntufont"
+                android:id="@+id/topay"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space20"
+                android:fontFamily="@font/ubuntufont"
+                android:text="Recapitulatif"
+                android:textSize="@dimen/space20"
+                android:id="@+id/recaptitle"
+                />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/ubuntufont"
+                android:src="@drawable/close2"
+                android:id="@+id/soso"
+                android:layout_marginRight="@dimen/space20"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/top"
+    android:background="@color/white"
+    android:layout_marginLeft="@dimen/space20"
+    android:layout_marginTop="@dimen/space10"
+    android:layout_marginRight="@dimen/space20"
+    android:paddingBottom="30dp"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view1"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="@dimen/space20"
         android:layout_marginLeft="@dimen/space20"
         android:layout_marginRight="@dimen/space20"
         android:id="@+id/recap1"
@@ -47,8 +87,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="lorem"
+            android:id="@+id/entetefinal"
             android:fontFamily="@font/ubuntufont"
-             android:layout_alignParentRight="true"
+            android:layout_alignParentRight="true"
             />
     </RelativeLayout>
 
@@ -107,7 +148,34 @@
         android:layout_marginTop="@dimen/space20"
         android:layout_marginLeft="@dimen/space20"
         android:layout_marginRight="@dimen/space20"
+        android:id="@+id/recap5"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A payer"
+            android:fontFamily="@font/ubuntufont"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Fcs"
+            android:fontFamily="@font/ubuntufont"
+            android:id="@+id/finaltopay"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space20"
+        android:layout_marginLeft="@dimen/space20"
+        android:layout_marginRight="@dimen/space20"
+        android:layout_marginBottom="@dimen/space20"
+     android:layout_above="@id/sendmessagefinal"
         android:id="@+id/recap4"
+        android:background="@color/white"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -116,6 +184,7 @@
             android:fontFamily="@font/ubuntufont"
             android:layout_centerHorizontal="true"
             android:id="@+id/messagehead"
+            android:layout_marginTop="@dimen/space20"
             />
 
         <TextView
@@ -124,23 +193,16 @@
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius felis non dapibus pellentesque. Vestibulum tristique pretium tempus. Donec eu erat mattis, cursus eros a, sodales dui. Curabitur ut arcu in metus ultricies tincidunt ac vel felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris faucibus libero id felis tristique, fringilla interdum risus convallis. Nam mattis purus quis nisl feugiat, eget tincidunt ipsum efficitur. Mauris quis tortor quis felis tincidunt posuere. Maecenas felis orci, ullamcorper at feugiat in, interdum ac ex"
             android:fontFamily="@font/ubuntufont"
             android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_marginRight="@dimen/space20"
+            android:layout_marginBottom="50dp"
+            android:autoSizeMaxTextSize="@dimen/space20"
             android:gravity="center"
             android:layout_below="@id/messagehead"
             android:layout_marginTop="@dimen/space10"
             />
     </RelativeLayout>
-         <TextView
-             android:layout_width="75dp"
-             android:layout_height="75dp"
-             android:layout_below="@id/recap4"
-             android:layout_centerHorizontal="true"
-             android:layout_marginTop="10dp"
-              android:background="@drawable/round_red"
-             android:text="12 Fcs"
-             android:gravity="center"
-             android:fontFamily="@font/ubuntufont"
-             android:textColor="@color/white"
-             />
+
 
     <TextView
         android:id="@+id/sendmessagefinal"

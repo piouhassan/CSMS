@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/writebg"
+    android:background="#EBEAEB"
     tools:context=".Activity.ChooseReceiverActivity">
      <LinearLayout
          android:layout_width="match_parent"
@@ -22,19 +22,22 @@
 
                <TextView
                    android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Envoyer le message"
-                   android:layout_centerVertical="true"
-                   android:layout_marginLeft="@dimen/space10"
+                   android:layout_height="match_parent"
+                   android:text="12 Fcs"
+                   android:layout_gravity="right"
+                   android:gravity="center"
+                   android:layout_marginLeft="10dp"
                    android:fontFamily="@font/ubuntufont"
+                   android:id="@+id/topay"
+                    android:textStyle="bold"
                    />
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Annuler"
+              <ImageView
+                  android:layout_width="24dp"
+                  android:layout_height="24dp"
                   android:layout_centerVertical="true"
                   android:layout_alignParentRight="true"
                   android:fontFamily="@font/ubuntufont"
+                  android:src="@drawable/close2"
                   android:id="@+id/soso"
                   android:layout_marginRight="@dimen/space20"
                   />
@@ -45,8 +48,9 @@
      <androidx.core.widget.NestedScrollView
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:layout_marginBottom="200dp"
+         android:layout_marginBottom="220dp"
          android:layout_below="@id/top"
+         android:scrollbars="vertical"
          >
 
           <RelativeLayout
@@ -92,17 +96,18 @@
                                        android:layout_toLeftOf="@id/submit_header"
                                        android:textSize="13.5dp" />
 
-                                   <TextView
+                                   <ImageView
                                        android:layout_width="50dp"
                                        android:layout_height="50dp"
                                        android:layout_alignParentRight="true"
-                                       android:background="@color/colorPrimary"
+                                       android:background="@drawable/round_red"
+                                       android:backgroundTint="@color/colorPrimary"
                                        android:id="@+id/submit_header"
                                        android:src="@drawable/add"
-                                       android:tint="@color/white"
+                                       android:padding="@dimen/space10"
                                        android:layout_marginLeft="@dimen/space10"
+                                       android:tint="@color/white"
                                        android:gravity="center"
-                                       android:text="+"
                                        android:textSize="40dp"
                                         android:textColor="@color/white"
                                        />
@@ -128,7 +133,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
-                        app:cardCornerRadius="5dp">
+                        >
 
                          <LinearLayout
                              android:layout_width="match_parent"
@@ -181,7 +186,7 @@
                    android:visibility="gone"
                    android:layout_below="@+id/choosedestinataire"
                    android:layout_marginLeft="@dimen/space10"
-                   android:layout_marginTop="10dp"
+                   android:layout_marginTop="1dp"
                    android:layout_marginRight="@dimen/space10"
                    android:background="#fff"
                    android:orientation="horizontal"
@@ -212,7 +217,7 @@
                    android:layout_height="75dp"
                    android:layout_below="@+id/choosedestinataire"
                    android:layout_marginLeft="@dimen/space10"
-                   android:layout_marginTop="10dp"
+                   android:layout_marginTop="1dp"
                    android:layout_marginRight="@dimen/space10"
                    android:orientation="horizontal"
                    android:background="@color/white"
@@ -238,62 +243,53 @@
                    android:layout_below="@id/choosedestinataire"
                    android:layout_marginTop="95dp"
                    android:id="@+id/contactChoose"
-                   android:visibility="gone"
                    android:orientation="vertical">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_below="@id/choose_receiver"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="@dimen/space10"
-                        android:layout_marginRight="@dimen/space10"
+                    <!--<androidx.cardview.widget.CardView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_below="@id/choose_receiver"-->
+                        <!--android:layout_alignParentBottom="true"-->
+                        <!--android:layout_marginLeft="@dimen/space10"-->
+                        <!--android:layout_marginRight="@dimen/space10"-->
 
+                        <!--&gt;-->
+
+                         <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+                             <!--android:layout_width="50dp"-->
+                             <!--android:layout_height="match_parent"-->
+                             <!--android:src="@drawable/person" />-->
+
+                         <!--<TextView-->
+                             <!--android:layout_width="wrap_content"-->
+                             <!--android:layout_height="wrap_content"-->
+                             <!--android:layout_gravity="center_vertical"-->
+                             <!--android:layout_marginLeft="60dp"-->
+                             <!--android:fontFamily="@font/ubuntufont"-->
+                             <!--android:text="Contact" />-->
+
+                         <!--<ImageView-->
+                             <!--android:layout_width="30dp"-->
+                             <!--android:layout_height="30dp"-->
+                             <!--android:layout_gravity="right"-->
+                             <!--android:layout_marginRight="@dimen/space10"-->
+                             <!--android:layout_marginTop="@dimen/space10"-->
+                             <!--android:padding="@dimen/space5"-->
+                             <!--android:src="@drawable/close2" />-->
+                    <!--</androidx.cardview.widget.CardView>-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/choosecontactrecyclerview"
                         >
 
-                         <com.mikhaellopez.circularimageview.CircularImageView
-                             android:layout_width="50dp"
-                             android:layout_height="match_parent"
-                             android:src="@drawable/person" />
-
-                         <TextView
-                             android:layout_width="wrap_content"
-                             android:layout_height="wrap_content"
-                             android:layout_gravity="center_vertical"
-                             android:layout_marginLeft="60dp"
-                             android:fontFamily="@font/ubuntufont"
-                             android:text="Contact" />
-
-                         <ImageView
-                             android:layout_width="30dp"
-                             android:layout_height="30dp"
-                             android:layout_gravity="right"
-                             android:layout_marginRight="@dimen/space10"
-                             android:layout_marginTop="@dimen/space10"
-                             android:padding="@dimen/space5"
-                             android:src="@drawable/close2" />
-                    </androidx.cardview.widget.CardView>
+                    </androidx.recyclerview.widget.RecyclerView>
                </LinearLayout>
 
           </RelativeLayout>
      </androidx.core.widget.NestedScrollView>
 
-     <TextView
-         android:layout_width="60dp"
-         android:layout_height="60dp"
-         android:text="12 Fcs"
-         android:layout_gravity="right"
-         android:gravity="center"
-         android:layout_marginLeft="40dp"
-         android:fontFamily="@font/ubuntufont"
-         android:layout_alignParentRight="true"
-         android:layout_above="@id/message_show_zone"
-         android:layout_marginBottom="-40dp"
-         android:textColor="@color/white"
-         android:background="@drawable/round_red"
-         android:elevation="15dp"
-         android:id="@+id/topay"
-         />
+
 
 
 
